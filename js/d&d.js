@@ -16,8 +16,10 @@ $(".draggable").each(function(i, element) {
         edgeResistance: 0.35,
         onDragStart: function () {
             con.from = con.getWhich();
+            TweenLite.set(con.from, {css:{zIndex:1110}});
         },
         onDragEnd: function () {
+            TweenLite.set(con.from, {css:{zIndex:1000}});
             con.to = con.getWhich();
             con.swap();
         }
@@ -75,8 +77,10 @@ Controller.prototype.makeDraggable = function() {
             edgeResistance: 0.35,
             onDragStart: function () {
                 con.from = con.getWhich();
+                TweenLite.set(con.from, {css:{zIndex:1110}});
             },
             onDragEnd: function () {
+                TweenLite.set(con.from, {css:{zIndex:1000}});
                 con.to = con.getWhich();
                 con.swap();
             }

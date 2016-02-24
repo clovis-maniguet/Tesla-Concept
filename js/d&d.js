@@ -13,7 +13,6 @@ Draggable.create(".draggable", {
     bounds: '.body',
     type:"x,y",
     edgeResistance:0.35,
-    revert:true,
     onDragStart: function() {
         con.from = con.getWhich();
     },
@@ -36,19 +35,19 @@ Controller.prototype.init = function() {
 };
 
 Controller.prototype.getWhich = function() {
-    if (Y < gridHeight) {
-        if (X < gridWidth) {
+    if (Y <= gridHeight + 65) {
+        if (X <= gridWidth) {
             return this.one;
         } else {
             return this.two;
         }
-    } else if (Y > (gridHeight*3) ) {
-        if (X < gridWidth) {
+    } else if (Y >= (gridHeight*3) + 65) {
+        if (X <= gridWidth) {
             return this.three;
         } else {
             return this.four;
         }
-    } else if (Y > gridHeight && Y < (gridHeight*3) ) {
+    } else if (Y >= gridHeight && Y <= (gridHeight*3) + 65) {
         return this.full;
     }
 };
@@ -56,24 +55,30 @@ Controller.prototype.getWhich = function() {
 Controller.prototype.swap = function() {
     var fromContent = this.from.children();
     var toContent = this.to.children();
+    console.log(this.from);
     this.from.empty();
     this.to.empty();
     this.from.append(toContent);
     this.to.append(fromContent);
+    TweenLite.set(this.from.children(), {clearProps:"transform"});
     TweenLite.set(this.to.children(), {clearProps:"transform"});
+    this.makeDraggable();
 };
 
 Controller.prototype.makeDraggable = function() {
     Draggable.create(".draggable", {
-        bounds:window,
+        bounds: '.body',
+        edgeResistance:0.35,
         type:"x,y",
 
         onDragStart: function() {
+            console.log('start');
             con.from = con.getWhich();
         },
         onDragEnd:function() {
             con.to = con.getWhich();
             con.swap();
+            console.log('end');
         }
     });
 };

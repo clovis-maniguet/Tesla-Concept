@@ -160,6 +160,9 @@ var time;
     }   
 });
 
+setTimeout(function(){ $('.loader').fadeOut(); }, 7500);
+
+
 function hideVolume(){
     console.log('ok');
     $('.volume').fadeOut();

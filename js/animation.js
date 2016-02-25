@@ -146,10 +146,33 @@ $(function() {
     });
 });
 
+var time;
+
+ $(window).on('keydown', function(e){
+    if(e.keyCode == 38){
+        $('.volume').fadeIn();
+        clearTimeout(time);
+        time = setTimeout(function(){ hideVolume(); }, 2000);
+    }else if(e.keyCode == 40){
+        $('.volume').fadeIn();
+        clearTimeout(time);
+        setTimeout(function(){ hideVolume(); }, 2000);
+    }   
+});
+
+function hideVolume(){
+    console.log('ok');
+    $('.volume').fadeOut();
+}
+
+
+
 /* Animation of boxes */
-TweenMax.fromTo('.box1', 20, {left: "-80px", repeat:-1, ease:Linear.easeNone}, {left: "100%", repeat:-1, ease:Linear.easeNone});
-TweenMax.fromTo('.box2', 15, {left: "-40px", repeat:-1, ease:Linear.easeNone}, {left: "100%", repeat:-1, ease:Linear.easeNone});
-TweenMax.fromTo('.box3', 25, {left: "-40px", repeat:-1, ease:Linear.easeNone}, {left: "100%", repeat:-1, ease:Linear.easeNone});
+TweenMax.fromTo('.box1', 20, {left: "-80px", repeat:-1, ease:Linear.easeNone}, {left: "110%", repeat:-1, ease:Linear.easeNone});
+TweenMax.fromTo('.box2', 15, {left: "-40px", repeat:-1, ease:Linear.easeNone}, {left: "110%", repeat:-1, ease:Linear.easeNone});
+TweenMax.fromTo('.box3', 25, {left: "-40px", repeat:-1, ease:Linear.easeNone}, {left: "110%", repeat:-1, ease:Linear.easeNone});
+
+TweenMax.fromTo('.box1V', 40, {bottom: "-40px", repeat:-1, ease:Linear.easeNone}, {bottom: "110%", repeat:-1, ease:Linear.easeNone});
 
 TweenMax.fromTo('.circleMicBottombar1', 60, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"360", repeat:-1, ease:Linear.easeNone});
 TweenMax.fromTo('.circleMicBottombar2', 30, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"360", repeat:-1, ease:Linear.easeNone});
@@ -160,3 +183,7 @@ TweenMax.fromTo('.MoveButtonCircle1', 30, {rotation:"0", repeat:-1, ease:Linear.
 TweenMax.fromTo('.MoveButtonCircle2', 20, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"360", repeat:-1, ease:Linear.easeNone});
 TweenMax.fromTo('.MoveButtonCircle3', 15, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"-360", repeat:-1, ease:Linear.easeNone});
 TweenMax.fromTo('.MoveButtonCircle4', 40, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"360", repeat:-1, ease:Linear.easeNone});
+
+TweenMax.fromTo('.leMic img:first-child', 60, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"360", repeat:-1, ease:Linear.easeNone});
+TweenMax.fromTo('.leMic img:nth-child(2)', 45, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"360", repeat:-1, ease:Linear.easeNone});
+TweenMax.fromTo('.leMic img:nth-child(3)', 55, {rotation:"0", repeat:-1, ease:Linear.easeNone}, {rotation:"360", repeat:-1, ease:Linear.easeNone});

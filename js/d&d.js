@@ -9,17 +9,21 @@ $(function() {
 });
 
 
-Draggable.create(".draggable", {
-    bounds: '.body',
-    type:"x,y",
-    edgeResistance:0.35,
-    onDragStart: function() {
-        con.from = con.getWhich();
-    },
-    onDragEnd:function() {
-        con.to = con.getWhich();
-        con.swap();
-    }
+$(".draggable").each(function(i, element) {
+    Draggable.create(this, {
+        trigger: $(this).find(".moveButton"),
+        type: "x,y",
+        edgeResistance: 0.35,
+        onDragStart: function () {
+            con.from = con.getWhich();
+            TweenLite.set(con.from, {css:{zIndex:1110}});
+        },
+        onDragEnd: function () {
+            TweenLite.set(con.from, {css:{zIndex:1000}});
+            con.to = con.getWhich();
+            con.swap();
+        }
+    })
 });
 
 var Controller = function() {
@@ -66,20 +70,21 @@ Controller.prototype.swap = function() {
 };
 
 Controller.prototype.makeDraggable = function() {
-    Draggable.create(".draggable", {
-        bounds: '.body',
-        edgeResistance:0.35,
-        type:"x,y",
-
-        onDragStart: function() {
-            console.log('start');
-            con.from = con.getWhich();
-        },
-        onDragEnd:function() {
-            con.to = con.getWhich();
-            con.swap();
-            console.log('end');
-        }
+    $(".draggable").each(function(i, element) {
+        Draggable.create(this, {
+            trigger: $(this).find(".moveButton"),
+            type: "x,y",
+            edgeResistance: 0.35,
+            onDragStart: function () {
+                con.from = con.getWhich();
+                TweenLite.set(con.from, {css:{zIndex:1110}});
+            },
+            onDragEnd: function () {
+                TweenLite.set(con.from, {css:{zIndex:1000}});
+                con.to = con.getWhich();
+                con.swap();
+            }
+        })
     });
 };
 

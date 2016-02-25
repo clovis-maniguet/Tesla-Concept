@@ -3,7 +3,6 @@ html{
 }
 
 .body {
-  margin: auto;
   width: 1200px;
   height: 1920px;
   background-color: #111111;
@@ -17,7 +16,6 @@ html{
 }
 
 .controlsCar {
-  display: none;
   position: absolute;
   top: -1920px;
   left: 0px;
@@ -110,7 +108,43 @@ html{
 .boxContainerFull{
     position: absolute;
     width: 90%; height: 11px;
-    top: 16px; left: 20px;
+    top: 4%;
+    left: 2%;
+    overflow: hidden;
+}
+
+.boxContainerControlSettings{
+    position: absolute;
+    width: 190px; height: 11px;
+    bottom: 550px;
+    left: 56px;
+    overflow: hidden;
+}
+
+.boxContainerLight1{
+    position: absolute;
+        width: 630px;
+    height: 11px;
+    top: 238px;
+    right: 46px;
+    overflow: hidden;
+}
+
+.boxContainerLight2{
+    position: absolute;
+        width: 630px;
+    height: 11px;
+    top: 331px;
+    right: 46px;
+    overflow: hidden;
+}
+
+
+
+.boxContainerVertical{
+    position: absolute;
+    width: 11px; height: 80%;
+    top: 10%; left: 75px;
     overflow: hidden;
 }
 
@@ -133,6 +167,13 @@ html{
     background-color: #00f9fd;
     position: absolute;
     top: 5px;
+}
+
+.box1V{
+     width: 4px; height: 40px;
+    background-color: #1c7174;
+    position: absolute;
+    left: 4px; bottom: -40px;
 }
 
 .globalMic{
@@ -180,5 +221,125 @@ html{
 .moveButton img{
     transform: translate(-50%, -50%);
     top: 50%; left: 50%;
+    position: absolute;
+}
+
+.musicPlayer{
+    width: 80px; height: 80px;
+    position: absolute;
+}
+
+.musicPlayer img{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%; left: 50%;
+    width: auto; height: auto;
+}
+
+.music4x2{
+    top: 125px; left: 300px;    
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+    Car controls boutons
+
+*/
+
+.light1{
+    position: absolute;
+    width: 160px; height: 62px;
+    top: 250px;
+}
+
+.light2{
+    position: absolute;
+    width: 160px; height: 62px;
+    top: 343px;
+}
+
+.offL, .drlL{left: 524px;}
+
+.parkingL, .fogL{left: 684px;}
+
+.autoL, .domeL{left: 844px;}
+
+.onL, .ambientL{left: 994px;}
+
+.power{
+    position: absolute;
+    bottom: 293px;
+    right: 47px;
+    width: 100px; height: 130px;
+}
+
+
+.controlSettings{
+    position: absolute;
+    width: 189px;    height: 215px;
+    bottom: 334px;    left: 57px;
+}
+
+.controlSettings > div{
+    width: 189px; height: 54px;
+}
+
+.lockedCar{
+    position: absolute;
+}
+
+.frontTrunk{
+    width: 93px; height: 132px;
+    top: 559px; left: 553px;
+}
+
+.leftD{
+    width: 184px; height: 109px;
+    top: 914px; left: 265px;
+}
+
+.open{
+    width: 199px; height: 141px;
+    top: 924px; left: 500px;
+}
+
+.rightD{
+    width: 184px; height: 109px;
+    top: 914px; right: 267px;
+}
+
+.carge{
+    width: 145px; height: 187px;
+    bottom: 479px; left: 315px;
+}
+
+.trunk{
+    width: 114px; height: 102px;
+    bottom: 596px; left: 545px;
+}
+
+.volume{
+    display: none;
+    width: 1200px; height: 1920px;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 9999;
+    background-color: rgba(11,11,11,0.8);
+}
+
+.volume img{
+    width: auto; height: auto;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     position: absolute;
 }

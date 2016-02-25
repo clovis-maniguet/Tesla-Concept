@@ -1,4 +1,4 @@
-var gridHeight = 400;
+var gridHeight = 420;
 var gridWidth = 600;
 var X, Y;
 $(function() {

@@ -51,7 +51,7 @@ html{
 
 .elmts img {
   width: 100%;
-  height: 100%; }
+  height: auto; }
 
 .content {
   position: relative;
@@ -62,37 +62,38 @@ html{
 .one {
   position: absolute;
   width: 595px;
-  height: 395px;
+  height: 420px;
   left: 0;
   top: 0; }
 
 .two {
   position: absolute;
   width: 595px;
-  height: 395px;
+  height: 420px;
   left: 605px;
   top: 0; }
 
 .full {
   position: absolute;
   width: 1200px;
-  height: 800px;
+  height: 745px;
   left: 0;
-  top: 405px; }
+  top: 430px; }
 
 .three {
   position: absolute;
   width: 595px;
-  height: 395px;
+  height: 420px;
   left: 0;
-  top: 1215px; }
+  top: 1185px;
+}
 
 .four {
   position: absolute;
   width: 595px;
-  height: 395px;
+  height: 420px;
   left: 605px;
-  top: 1215px; }
+  top: 1185px; }
 
 .draggable {
   width: 100%;
@@ -186,17 +187,16 @@ html{
     background-color: rgba(0,41,55,0.9);
 }
 
+
 .leMic{
-    width: 729px; height: 716px;
     position: absolute;
+    width: 731px; height: 731px;
     transform: translate(-50%, -50%);
     top: 50%; left: 50%;
 }
 
 .leMic img{
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%; left: 50%;
 }
 
 .listeningText{
@@ -209,7 +209,7 @@ html{
 .crossCloseMic {
   position: absolute;
   top: 35px;
-  right: 46px; 
+  left: 46px;
 }
 
 .moveButton{
@@ -237,16 +237,8 @@ html{
 }
 
 .music4x2{
-    top: 125px; left: 300px;    
+    top: 136px; left: 300px;    
 }
-
-
-
-
-
-
-
-
 
 
 /*

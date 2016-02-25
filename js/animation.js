@@ -20,6 +20,132 @@ $('body').on('click', '.crossCloseMic', function(e){
     TweenMax.to('.globalMic', 0.6, {top: "-1920px", display: "none", opacity:"0", ease:Linear.easeNone});
 });
 
+$('.iconSeatLeft').on('click', function(e){
+  
+  if($(this).hasClass( 'off' )) {
+    $(this).removeClass('off');
+    $(this).addClass('on1');
+  } else if($(this).hasClass( 'on1' )) {
+    $(this).removeClass('on1');
+    $(this).addClass('on2');
+  } else if($(this).hasClass( 'on2' )) {
+    $(this).removeClass('on2');
+    $(this).addClass('on3');
+  } else if($(this).hasClass( 'on3' )) {
+    $(this).removeClass('on3');
+    $(this).addClass('off');
+  }
+  
+});
+
+$('.iconSeatRight').on('click', function(e){
+  
+  if($(this).hasClass( 'off' )) {
+    $(this).removeClass('off');
+    $(this).addClass('on1');
+  } else if($(this).hasClass( 'on1' )) {
+    $(this).removeClass('on1');
+    $(this).addClass('on2');
+  } else if($(this).hasClass( 'on2' )) {
+    $(this).removeClass('on2');
+    $(this).addClass('on3');
+  } else if($(this).hasClass( 'on3' )) {
+    $(this).removeClass('on3');
+    $(this).addClass('off');
+  }
+  
+});
+
+
+$('.iconVentRight').on('click', function(e){
+  
+  if($(this).hasClass( 'off' )) {
+    $(this).removeClass('off');
+    $(this).addClass('on1');
+  } else if($(this).hasClass( 'on1' )) {
+    $(this).removeClass('on1');
+    $(this).addClass('on2');
+  } else if($(this).hasClass( 'on2' )) {
+    $(this).removeClass('on2');
+    $(this).addClass('on3');
+  } else if($(this).hasClass( 'on3' )) {
+    $(this).removeClass('on3');
+    $(this).addClass('on4');
+  } else if($(this).hasClass( 'on4' )) {
+    $(this).removeClass('on4');
+    $(this).addClass('on5');
+  } else if($(this).hasClass( 'on5' )) {
+    $(this).removeClass('on5');
+    $(this).addClass('off');
+  }
+  
+});
+
+$('.iconFrontLeft').on('click', function(e){
+  $(this).toggleClass('off');
+});
+
+$('.iconAirflowLeft').on('click', function(e){
+  $(this).toggleClass('off');
+});
+
+$('.iconRearRight').on('click', function(e){
+  $(this).toggleClass('off');
+});
+
+
+$(function() {
+    $( ".buttonLeft" ).draggable({
+      containment: "parent",
+      axis: "x",
+      drag: function(e){
+        $PositionX = $('.buttonLeft').position().left;
+        //$PositionMin = 81;
+        //$PositionMax = 372;
+        $PositionMin = 0;
+        $PositionMax = 252;
+
+        $positionGood = $PositionX - $PositionMin;
+        $PositionMaxGood = $PositionMax - $PositionMin;
+        $pourcentage = ($positionGood*100)/$PositionMaxGood;
+
+        $pourcentageGood = Math.round($pourcentage);
+
+        $('.textLeft').text($pourcentageGood);
+      }
+    });
+  
+    $( ".buttonRight" ).draggable({
+      containment: "parent",
+      axis: "x",
+      drag: function(e){
+        $PositionX = $('.buttonRight').position().left;
+        //$PositionMin = 81;
+        //$PositionMax = 372;
+        $PositionMin = 252;
+        $PositionMax = 0;
+
+        $positionGood = $PositionX - $PositionMin;
+        $PositionMaxGood = $PositionMax - $PositionMin;
+        $pourcentage = ($positionGood*100)/$PositionMaxGood;
+
+        $pourcentageGood = Math.round($pourcentage);
+
+        $('.textRight').text($pourcentageGood);
+      }
+    });
+  
+  $( ".buttonOnOff" ).draggable({
+      containment: "parent",
+      axis: "x",
+      drag: function(e){
+      },
+      stop: function(e){
+        $(".textButtonOnOff").toggleClass('off');
+      }
+    });
+});
+
 var time;
 
  $(window).on('keydown', function(e){
@@ -38,6 +164,7 @@ function hideVolume(){
     console.log('ok');
     $('.volume').fadeOut();
 }
+
 
 
 /* Animation of boxes */
